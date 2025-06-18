@@ -1,101 +1,317 @@
-table tr td{
-    vertical-align: middle;
-}
-
-td button{
-    margin: 5px;
-}
-
-td button i{
-    font-size: 20px;
-}
-
-
-.modal-header{
-    background: rgb(131, 75, 223);
-    color: #fff;
-}
-
-.modal-body form {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    margin: 0;
     padding: 0;
 }
 
-.modal-body form .imgholder{
-    width: 200px;
-    height: 200px;
-    position: relative;
-    border-radius: 20px;
+
+
+section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.newUser {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(131, 75, 223, 0.3);
+}
+
+.newUser:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(131, 75, 223, 0.4);
+    background-color: rgb(111, 55, 203) !important;
+}
+
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.table thead th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    padding: 15px 10px;
+    font-size: 14px;
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+
+.table td {
+    padding: 12px 10px;
+    vertical-align: middle;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.table img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #667eea;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Styling */
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
 
-.imgholder .upload{
-    position: absolute;
-    bottom: 0;
-    left: 10;
-    width: 100%;
-    height: 100px;
-    background: rgba(0,0,0,0.3);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.upload i{
-    color: #fff;
-    font-size: 35px;
-}
-
-.imgholder:hover .upload{
-    display: flex;
-}
-
-.imgholder .upload input{
-    display: none;
-}
-
-.modal-body form .inputField{
-    flex-basis: 68%;
-    border-left: 5px groove rgb(131, 75, 223);
-    padding-left: 20px;
-}
-
-form .inputField > div{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-form .inputField > div label{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-#userForm form .inputField > div label::after{
-    content: "*";
-    color: red;
-}
-
-form .inputField > div input{
-    width: 75%;
-    padding: 10px;
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
     border: none;
+    padding: 20px 30px;
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+.modal-body {
+    padding: 30px;
+    background: #f8f9fa;
+}
+
+/* Image Holder Card */
+.imgholder {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px auto;
+    border: 3px dashed #667eea;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.imgholder:hover {
+    border-color: #764ba2;
+    transform: scale(1.05);
+}
+
+.upload {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(102, 126, 234, 0.1);
+    transition: all 0.3s ease;
+}
+
+.upload:hover {
+    background: rgba(102, 126, 234, 0.2);
+}
+
+.upload input[type="file"] {
+    display: none;
+}
+
+.upload i {
+    font-size: 40px;
+    color: #667eea;
+    transition: all 0.3s ease;
+}
+
+.upload:hover i {
+    color: #764ba2;
+    transform: scale(1.2);
+}
+
+.img,
+.showImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: none;
+}
+
+.img.show,
+.showImg.show {
+    display: block;
+}
+
+/* Input Field Styling */
+.inputField {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.inputField>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputField label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.inputField input {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.inputField input:focus {
     outline: none;
-    background: transparent;
-    border-bottom: 2px solid rgb(131, 75, 223);
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
 }
 
-.modal-footer .submit{
-    font-size: 18px;
+.inputField input:disabled {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border-color: #dee2e6;
 }
 
+/* Modal Footer */
+.modal-footer {
+    background: white;
+    border: none;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
 
-#readData form .inputField > div input{
-    color: #000;
-    font-size: 18px;
+.submit {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(131, 75, 223, 0.3);
+}
+
+.submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(131, 75, 223, 0.4);
+    background-color: rgb(111, 55, 203) !important;
+}
+
+.btn-secondary {
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+}
+
+/* Action Buttons in Table */
+.table .btn {
+    padding: 5px 10px;
+    margin: 0 2px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.table .btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .inputField {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .modal-dialog {
+        margin: 10px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .table-responsive {
+        font-size: 14px;
+    }
+
+    .imgholder {
+        width: 150px;
+        height: 150px;
+    }
+
+    section {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .table {
+        font-size: 12px;
+    }
+
+    .table img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .inputField input {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .modal-title {
+        font-size: 20px;
+    }
 }

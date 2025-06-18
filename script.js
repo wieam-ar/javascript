@@ -103,7 +103,7 @@ function deleteProfile(index) {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   const profile = {
-    picture: imgInput.src || "./image/Profile Icon.webp",
+    picture: imgInput.src ,
     name: nameInput.value,
     age: ageInput.value,
     city: cityInput.value,
@@ -124,7 +124,6 @@ form.addEventListener("submit", function (e) {
   submitBtn.innerText = "Submit";
   modalTitle.innerText = "Fill the Form";
   form.reset();
-  imgInput.src = "./image/Profile Icon.webp";
   displayProfiles();
 });
 
