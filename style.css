@@ -203,7 +203,45 @@ section {
     transition: all 0.3s ease;
     background: white;
 }
+td button {
+    margin: 3px 5px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
 
+td button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+td button:hover::before {
+    left: 100%;
+}
+
+td button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+td button i {
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+td button:hover i {
+    transform: scale(1.2);
+}
 .inputField input:focus {
     outline: none;
     border-color: #667eea;
