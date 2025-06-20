@@ -45,7 +45,7 @@ Le tout en utilisant `localStorage` pour conserver les informations même après
 ## 📷 Aperçu
 
 <p align="center">
-  <img src="assets/ScreenShoot.png" alt="App Screenshot" width="500">
+  <img src="assets/SCREENSHOT.pngg" alt="App Screenshot" width="500">
 </p>
 
 ---
