@@ -1,14 +1,23 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   background-image: url(assets/usersss.jpg);
+    background-image: url(assets/usersss.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    backdrop-filter: blur(3px);  
     min-height: 100vh;
     margin: 0;
     padding: 0;
 }
 
+.Sec1{
+    background: #ffffff00;
+}
+
+.S1{
+   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+}
 
 
 section {
